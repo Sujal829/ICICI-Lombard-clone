@@ -56,7 +56,7 @@ function Header() {
               </div>
               <div>
                 {user ? (
-                  <button onClick={async () => await dispatch(logout())}>
+                  <button onClick={async () => {await dispatch(logout()); navigate("/")}}>
                     Logout
                   </button>
                 ) : (
@@ -64,7 +64,7 @@ function Header() {
                     Login
                   </button>
                 )}
-                {user && <b>Welcome {user.FirstName} !!</b>}
+                {user && <b onClick={()=>navigate('/dashboard')}>Welcome {user.FirstName} !!</b>}
                 {popuplogin && <PopupLogin />}
               </div>
             </div>

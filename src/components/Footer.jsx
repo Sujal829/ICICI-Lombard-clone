@@ -8,9 +8,9 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Footer() {
-  console.log(data);
-  console.log(data.footer1);
-  console.log(data.footer1.Products);
+  // console.log(data);
+  // console.log(data.footer1);
+  // console.log(data.footer1.Products);
   return (
     <div>
       <footer className="footer-content-wrpper">
@@ -79,7 +79,7 @@ function Footer() {
               <div className="app-links">
                 <span className="app-label">IL TakeCare App</span>
                 <div className="iconslogo">
-                  <a onclick="window.open('https://app.adjust.net.in/7dsl5cr','targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=670,height=680');">
+                  <a >
                     <img
                       className="lazy loading"
                       alt="play store"
@@ -87,7 +87,7 @@ function Footer() {
                       data-ll-status="loading"
                     />
                   </a>
-                  <a onclick="window.open('https://app.adjust.net.in/7dsl5cr','targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=670,height=680');">
+                  <a >
                     <img
                       className="lazy loading"
                       alt="app store"

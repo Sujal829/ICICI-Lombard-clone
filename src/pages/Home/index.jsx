@@ -2,8 +2,10 @@ import React, { useRef, useState } from "react";
 import data from "./home.json";
 import Header from "../../components/Header";
 import { Tooltip } from "react-tooltip";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import localstate from "../../Services/localstate";
+import { setuser } from "../../Redux/UserSlice";
 function Home() {
   const [inc, setinc] = useState(1);
   const [adultscount, setadultscount] = useState(0);
@@ -11,37 +13,64 @@ function Home() {
   const [incmemflag, setincmemflag] = useState(false);
   const [travelScope, setTravelScope] = useState(false);
   const user = useSelector((state) => state.auth.user);
+  const dispatch = useDispatch()
   // console.log(user);
   const inpcarno = useRef();
-  const inpno = useRef();
-  const inpemail = useRef();
   
 const handleformsubmit = async (e) => {
   e.preventDefault();
+
   if (!user) {
     alert("User not logged in. Login first");
     return;
   }
 
   const insuranceObj = {
-    inctype: "",
-    carno: inpcarno
+    inctype: inc == 1 ? "Car" : "Bike",
+    carno: inpcarno.current.value
   };
 
   try {
-    const res = await axios.patch(
-      `http://localhost:5000/users/${user.id}`,
-      { insurance: insuranceObj }
+    // 1️⃣ Get latest user
+    const userRes = await axios.get(
+      `http://localhost:5000/users/${user.id}`
     );
 
-    if (res.status === 200) {
-      alert("Data submitted successfully");
+    const userData = userRes.data;
+
+    // 2️⃣ Append new insurance
+    const updatedInsurance = [
+      ...(userData.insurance || []),
+      insuranceObj
+    ];
+
+    // 3️⃣ Patch insurance
+    const patchRes = await axios.patch(
+      `http://localhost:5000/users/${user.id}`,
+      { insurance: updatedInsurance }
+    );
+
+    if (patchRes.status === 200) {
+      // 4️⃣ Fetch updated user again
+      const updatedUserRes = await axios.get(
+        `http://localhost:5000/users/${user.id}`
+      );
+
+      const updatedUser = updatedUserRes.data;
+
+      // 5️⃣ Update local storage / state
+      localstate.setlocaltoken(updatedUser);
+      dispatch(setuser(updatedUser))
+      alert("Insurance added successfully");
     }
   } catch (error) {
     console.error(error);
-    alert(error);
+    alert("Something went wrong");
   }
 };
+
+
+
   return (
     <div>
       <div className="main">
@@ -87,6 +116,7 @@ const handleformsubmit = async (e) => {
                       Car registration no.
                     </label>
                     <input
+                      ref={inpcarno}
                       type="text"
                       pattern="^[A-Z]{2}[0-9]{1,2}[A-Z]{1,3}[0-9]{4}$"
                       id="car-registration"
@@ -129,6 +159,7 @@ const handleformsubmit = async (e) => {
                       Bike registration no.
                     </label>
                     <input
+                      ref={inpcarno}
                       type="text"
                       id="car-registration"
                       placeholder="E.g. MH01DF5698"
@@ -801,10 +832,10 @@ a travel plan every time you plan a trip"
               height="315"
               src="https://www.youtube.com/embed/wM6oEqHEDzM?si=8C0gyQvig2NgUmx0"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         </div>

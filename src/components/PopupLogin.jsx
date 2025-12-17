@@ -69,11 +69,12 @@ const PopupLogin = () => {
         if (firstname && lastname && mobileno) {
           console.log(firstname, lastname, mobileno);
           let obj = {
-            id: Date.now(),
+            id: Date.now().toString(),
             FirstName: firstname,
             LastName: lastname,
             Mobno: mobileno,
-            email: emailid
+            email: emailid,
+            insurance: []
           };
           localstate.setlocaltoken(obj);
           const res = await axios.post("http://localhost:5000/users", obj);

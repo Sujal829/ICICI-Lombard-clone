@@ -8,7 +8,6 @@ const initialState = {
   loading: false,
   error: null
 };
-
 const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -32,9 +31,13 @@ const authSlice = createSlice({
       state.token = null;
       state.isAuthenticated = false;
       localStorage.removeItem("token");
+      
+    },
+    setuser(state,action){
+      state.user= action.payload
     }
   }
 });
 
-export const { loginStart, loginSuccess, loginFailure, logout } = authSlice.actions;
+export const { loginStart, loginSuccess, loginFailure, logout, setuser } = authSlice.actions;
 export default authSlice.reducer;
