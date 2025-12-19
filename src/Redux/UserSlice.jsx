@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import localstate from "../Services/localstate";
+import { toast } from "react-toastify";
 
 const initialState = {
   user: JSON.parse(localstate.getlocatoken()),
@@ -31,7 +32,7 @@ const authSlice = createSlice({
       state.token = null;
       state.isAuthenticated = false;
       localStorage.removeItem("token");
-      
+      toast.success("Logout Successful !!",{position: "top-center"});
     },
     setuser(state,action){
       state.user= action.payload
