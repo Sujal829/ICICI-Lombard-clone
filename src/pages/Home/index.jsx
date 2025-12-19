@@ -15,68 +15,65 @@ function Home() {
   const [incmemflag, setincmemflag] = useState(false);
   const [travelScope, setTravelScope] = useState(false);
   const user = useSelector((state) => state.auth.user);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // console.log(user);
   const inpcarno = useRef();
-  const navigate = useNavigate()
-  
-const handleformsubmit = async (e) => {
-  e.preventDefault();
+  const navigate = useNavigate();
 
-  if (!user) {
-    toast.error("User not logged in. Login first",{position: "top-center"});
-    alert("User not logged in. Login first");
-    return;
-  }
+  const handleformsubmit = async (e) => {
+    e.preventDefault();
 
-  const insuranceObj = {
-    inctype: inc == 1 ? "Car" : "Bike",
-    carno: inpcarno.current.value
-  };
+    if (!user) {
+      toast.error("User not logged in. Login first", {
+        position: "top-center",
+      });
+      alert("User not logged in. Login first");
+      return;
+    }
 
-  try {
-    // 1️⃣ Get latest user
-    const userRes = await axios.get(
-      `http://localhost:5000/users/${user.id}`
-    );
+    const insuranceObj = {
+      inctype: inc == 1 ? "Car" : "Bike",
+      carno: inpcarno.current.value,
+    };
 
-    const userData = userRes.data;
+    try {
+      // 1️⃣ Get latest user
+      const userRes = await axios.get(`http://localhost:5000/users/${user.id}`);
 
-    // 2️⃣ Append new insurance
-    const updatedInsurance = [
-      ...(userData.insurance || []),
-      insuranceObj
-    ];
+      const userData = userRes.data;
 
-    // 3️⃣ Patch insurance
-    const patchRes = await axios.patch(
-      `http://localhost:5000/users/${user.id}`,
-      { insurance: updatedInsurance }
-    );
+      // 2️⃣ Append new insurance
+      const updatedInsurance = [...(userData.insurance || []), insuranceObj];
 
-    if (patchRes.status === 200) {
-      // 4️⃣ Fetch updated user again
-      const updatedUserRes = await axios.get(
-        `http://localhost:5000/users/${user.id}`
+      // 3️⃣ Patch insurance
+      const patchRes = await axios.patch(
+        `http://localhost:5000/users/${user.id}`,
+        { insurance: updatedInsurance }
       );
 
-      const updatedUser = updatedUserRes.data;
+      if (patchRes.status === 200) {
+        // 4️⃣ Fetch updated user again
+        const updatedUserRes = await axios.get(
+          `http://localhost:5000/users/${user.id}`
+        );
 
-      // 5️⃣ Update local storage / state
-      localstate.setlocaltoken(updatedUser);
-      dispatch(setuser(updatedUser))
-      toast.success("Insurance added successfully",{position: "top-center"})
-      // alert("Insurance added successfully");
-      inpcarno.current.value = "";
+        const updatedUser = updatedUserRes.data;
+
+        // 5️⃣ Update local storage / state
+        localstate.setlocaltoken(updatedUser);
+        dispatch(setuser(updatedUser));
+        toast.success("Insurance added successfully", {
+          position: "top-center",
+        });
+        // alert("Insurance added successfully");
+        inpcarno.current.value = "";
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Something went wrong", { position: "top-center" });
+      // alert("Something went wrong");
     }
-  } catch (error) {
-    console.error(error);
-    toast.error("Something went wrong",{position: "top-center"});
-    // alert("Something went wrong");
-  }
-};
-
-
+  };
 
   return (
     <div>
@@ -828,184 +825,180 @@ a travel plan every time you plan a trip"
         </div>
 
         <div className="section-6">
-  <div className="section-6-title">
-    <h2>#LearnCPRSaveALife</h2>
-    <p>
-      Did you know? Effective CPR can double the chance of a person{" "}
-      <br /> surviving a cardiac arrest.
-    </p>
-  </div>
+          <div className="section-6-title">
+            <h2>#LearnCPRSaveALife</h2>
+            <p>
+              Did you know? Effective CPR can double the chance of a person{" "}
+              <br /> surviving a cardiac arrest.
+            </p>
+          </div>
 
-  <div>
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/wM6oEqHEDzM?si=8C0gyQvig2NgUmx0"
-      title="YouTube video player"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerPolicy="strict-origin-when-cross-origin"
-      allowFullScreen
-    ></iframe>
-  </div>
-</div>
+          <div>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/wM6oEqHEDzM?si=8C0gyQvig2NgUmx0"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
 
-<div className="row section-7">
-  <div className="col-sm-12 col-md-6 d-flex align-items-start">
-    <div>
-      <div className="pmfby-logo mb-3">
-        <img
-          src={data.PMFBY[0].logo}
-          alt="pmfby-logo"
-          className="img-fluid"
-        />
-      </div>
+        <div className="row section-7">
+          <div className="col-sm-12 col-md-6 d-flex align-items-start">
+            <div>
+              <div className="pmfby-logo mb-3">
+                <img
+                  src={data.PMFBY[0].logo}
+                  alt="pmfby-logo"
+                  className="img-fluid"
+                />
+              </div>
 
-      <div className="pmfby-block">
-        <h2>{data.PMFBY[0].title}</h2>
-        <p>{data.PMFBY[0].des}</p>
-      </div>
-    </div>
-  </div>
-
-  <div className="col-sm-12 col-md-6 fraud-section">
-    <div
-      id="carousel-slide"
-      className="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div className="carousel-indicators fraud-button">
-        <button
-          type="button"
-          data-bs-target="#carousel-slide"
-          data-bs-slide-to="0"
-          className="active"
-          aria-current="true"
-        ></button>
-
-        <button
-          type="button"
-          data-bs-target="#carousel-slide"
-          data-bs-slide-to="1"
-        ></button>
-      </div>
-
-      <div className="carousel-inner">
-        {data.FraudAwareness.map((i, index) => (
-          <div
-            className={`carousel-item ${index === 0 ? "active" : ""}`}
-            key={index}
-          >
-            <img src={i.logo} alt="fraud-logo" className="img-fluid" />
-
-            <div className="fraud-block mt-3">
-              <h2>{i.title}</h2>
-              <div className="fraud-block-content">
-                <p>{i.des}</p>
-                <a href={`mailto:${i.mail}`}>
-                  <strong>{i.mail}</strong>
-                </a>
+              <div className="pmfby-block">
+                <h2>{data.PMFBY[0].title}</h2>
+                <p>{data.PMFBY[0].des}</p>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
 
+          <div className="col-sm-12 col-md-6 fraud-section">
+            <div
+              id="carousel-slide"
+              className="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div className="carousel-indicators fraud-button">
+                <button
+                  type="button"
+                  data-bs-target="#carousel-slide"
+                  data-bs-slide-to="0"
+                  className="active"
+                  aria-current="true"
+                ></button>
 
+                <button
+                  type="button"
+                  data-bs-target="#carousel-slide"
+                  data-bs-slide-to="1"
+                ></button>
+              </div>
 
-        <div className="row section-8">
-  {/* LEFT SIDE – REVIEWS */}
-  <div className="col-sm-12 col-md-6">
-    <h2>A happy you, makes a happy us.</h2>
+              <div className="carousel-inner">
+                {data.FraudAwareness.map((i, index) => (
+                  <div
+                    className={`carousel-item ${index === 0 ? "active" : ""}`}
+                    key={index}
+                  >
+                    <img src={i.logo} alt="fraud-logo" className="img-fluid" />
 
-    <div className="review-block">
-      <div
-        id="carousel-slide2"
-        className="carousel slide"
-        data-bs-ride="carousel"
-      >
-        {/* INDICATORS */}
-        <div className="carousel-indicators review-block-button">
-          {data.reviews.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              data-bs-target="#carousel-slide2"
-              data-bs-slide-to={index}
-              className={index === 0 ? "active" : ""}
-              aria-current={index === 0 ? "true" : undefined}
-            ></button>
-          ))}
+                    <div className="fraud-block mt-3">
+                      <h2>{i.title}</h2>
+                      <div className="fraud-block-content">
+                        <p>{i.des}</p>
+                        <a href={`mailto:${i.mail}`}>
+                          <strong>{i.mail}</strong>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* SLIDES */}
-        <div className="carousel-inner">
-          {data.reviews.map((item, index) => (
-            <div
-              key={item.id}
-              className={`carousel-item ${index === 0 ? "active" : ""}`}
-            >
-              <img
-                src={item.profileIcon}
-                alt="profile-icon"
-                className="profile-icon"
-              />
+        <div className="row section-8">
+          {/* LEFT SIDE – REVIEWS */}
+          <div className="col-sm-12 col-md-6">
+            <h2>A happy you, makes a happy us.</h2>
 
-              <div className="award-block mt-3">
-                <div className="review-block-content">
-                  <h4 className="review-block-heading">{item.name}</h4>
+            <div className="review-block">
+              <div
+                id="carousel-slide2"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
+                {/* INDICATORS */}
+                <div className="carousel-indicators review-block-button">
+                  {data.reviews.map((_, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      data-bs-target="#carousel-slide2"
+                      data-bs-slide-to={index}
+                      className={index === 0 ? "active" : ""}
+                      aria-current={index === 0 ? "true" : undefined}
+                    ></button>
+                  ))}
+                </div>
 
-                  <div className="ratings">
-                    {[...Array(5)].map((_, i) => (
-                      <span
-                        key={i}
-                        className={i < item.rating ? "star-fill" : "star-grey"}
-                      ></span>
-                    ))}
-                  </div>
+                {/* SLIDES */}
+                <div className="carousel-inner">
+                  {data.reviews.map((item, index) => (
+                    <div
+                      key={item.id}
+                      className={`carousel-item ${index === 0 ? "active" : ""}`}
+                    >
+                      <img
+                        src={item.profileIcon}
+                        alt="profile-icon"
+                        className="profile-icon"
+                      />
 
-                  <p>{item.comment}</p>
+                      <div className="award-block mt-3">
+                        <div className="review-block-content">
+                          <h4 className="review-block-heading">{item.name}</h4>
+
+                          <div className="ratings">
+                            {[...Array(5)].map((_, i) => (
+                              <span
+                                key={i}
+                                className={
+                                  i < item.rating ? "star-fill" : "star-grey"
+                                }
+                              ></span>
+                            ))}
+                          </div>
+
+                          <p>{item.comment}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* RIGHT SIDE – AWARDS */}
+          <div className="col-sm-12 col-md-6">
+            <h2>Awards & recognition</h2>
+
+            {data.awards.map((award) => (
+              <div key={award.id} className="awards-block-1">
+                <div className="award-block-img">
+                  <img src={award.image} alt={award.title} />
+                </div>
+
+                <div className="award-block-content">
+                  <h6>{award.title}</h6>
+                  <p>{award.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* MORE AWARDS LINK */}
+          <div className="more-awards">
+            <b>
+              <a href="#">More awards..</a>
+            </b>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  {/* RIGHT SIDE – AWARDS */}
-  <div className="col-sm-12 col-md-6">
-    <h2>Awards & recognition</h2>
-
-    {data.awards.map((award) => (
-      <div key={award.id} className="awards-block-1">
-        <div className="award-block-img">
-          <img src={award.image} alt={award.title} />
-        </div>
-
-        <div className="award-block-content">
-          <h6>{award.title}</h6>
-          <p>{award.description}</p>
-        </div>
-      </div>
-    ))}
-  </div>
-
-  {/* MORE AWARDS LINK */}
-  <div className="more-awards">
-    <b>
-      <a href="#">More awards..</a>
-    </b>
-  </div>
-</div>
-
-
-
-
       </div>
     </div>
   );
