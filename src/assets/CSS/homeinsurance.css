@@ -1,0 +1,267 @@
+.homeformBanner {
+    position: relative;
+    z-index: 2;
+}
+.btn-orange {
+    margin-left: 90px;
+    cursor: pointer;
+    overflow: hidden;
+    color: #fff;
+    padding: 1.5rem 3rem;
+    font-size: medium;
+    background: #ec6608;
+    -webkit-border-radius: 30rem;
+    border-radius: 5px;
+    text-decoration: none;
+    outline: none;
+    border: 0;
+    font-weight: 700;
+    text-align: center;
+}
+.section-content {
+    padding: 6rem 0 6rem 0;
+}
+.il-container {
+    max-width: 1330px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.twoCardouter {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+h1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    line-height: 45px;
+}
+.homeformBanner .bannerTitle {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 0 34px 0;
+}
+.homeformBanner ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.homeformBanner li.icon {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 20px;
+    width: 45%;
+}
+
+li.icon {
+    position: relative;
+    padding-left: 50px;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+.sum_insured_txt {
+    color: #838383;
+    z-index: 9999999;
+    position: relative;
+    top: 40px;
+    font-size: 14px;
+    line-height: 17.57px;
+    text-align: left;
+}
+.homeformBanner .bannerFormblock
+ {
+    background: #fff;
+    /* height:550px; */
+    width: 100%;
+    max-width: 471px;
+    border: 1px solid #CBCDCE;
+    box-shadow: 0px 4px 23px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    z-index: 3;
+    padding: 35px 30px;
+}
+.bannerFormblock .bannerFormTitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #282828;
+    padding-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+.bannerFormblock .policy-tabs {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    margin-bottom: 3rem;
+}
+.bannerFormblock .policy-tabs .policy-radio:first-child {
+    margin-right: 3%;
+}
+
+.bannerFormblock .policy-tabs {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    margin-bottom: 3rem;
+}
+.ico {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    position: absolute;
+    right: 15px;
+    top: 17px;
+}
+.input-block input {
+    cursor: auto;
+    border: none;
+    color: #282828;
+    border-bottom: 1px solid #d1d1d1;
+    outline: 0;
+    background: 0 0;
+    width: 100%;
+    padding: 17px 17px 17px 17px;
+    border-radius: 5px;
+    border: solid 1px #c9c9c9;
+    background-color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.policy-radio input[type="radio"]:checked + label {
+    background: #FFF9F6;
+    border: 2px solid #EC6625;
+    color: #282828;
+}
+
+.bannerFormblock .policy-tabs .policy-radio {
+    background: #FFF9F6;
+    border: 2px solid #EC6625;
+    color: #282828;
+    height: 35px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    font-weight: 500;
+}
+.bannerFormblock .policy-tabs .policy-radio:first-child {
+    margin-right: 3%;
+}
+.policy-radio label {
+    color: #838383;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1.6rem 1.8rem;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    height: 54px;
+    border: 2px solid #C9C9C9;
+}
+
+.input-block.mb-5rem {
+    margin-bottom: 5rem;
+}
+.input-block label {
+    cursor: auto;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 1.6rem;
+    color: #d1d1d1;
+    font-weight: 400;
+    position: absolute;
+    top: 16px;
+    left: 17px;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+    color: #838383;
+    background: #fff;
+}
+.input-block.mb-5rem {
+    margin-bottom: 5rem;
+}
+.input-block label {
+    cursor: auto;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 1.6rem;
+    color: #d1d1d1;
+    font-weight: 400;
+    position: absolute;
+    top: 16px;
+    left: 17px;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+    color: #838383;
+    background: #fff;
+}
+.input-block input {
+    cursor: auto;
+    border: none;
+    color: #282828;
+    border-bottom: 1px solid #d1d1d1;
+    outline: 0;
+    background: 0 0;
+    width: 100%;
+    padding: 17px 17px 17px 17px;
+    border-radius: 5px;
+    border: solid 1px #c9c9c9;
+    background-color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+
+
+span.greyColr {
+    color: #575757;
+    font-size: 1.2rem;
+    font-weight: 500;
+    top: 60px;
+    display: block;
+}
+
+span.ui-error {
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    color: #ff0000;
+    font-weight: 400;
+    top: 62px;
+    display: none;
+}
+
+.input-block label {
+    cursor: auto;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 1.6rem;
+    color: #d1d1d1;
+    font-weight: 400;
+    position: absolute;
+    top: 16px;
+    left: 17px;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+    color: #838383;
+    background: #fff;
+}
