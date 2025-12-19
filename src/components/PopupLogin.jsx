@@ -3,16 +3,10 @@ import "../assets/CSS/v1.css";
 import UseApi from "../Services/useApi";
 import axios from "axios";
 import localstate from "../Services/localstate";
-<<<<<<< HEAD
-import { data, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { loginFailure, loginStart, loginSuccess } from "../Redux/UserSlice";
-=======
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginStart, loginSuccess } from "../Redux/UserSlice";
 import { ToastContainer, toast } from 'react-toastify';
->>>>>>> master
 const PopupLogin = () => {
   const dispatch = useDispatch();
   const { loading, error, isAuthenticated } = useSelector(
@@ -43,19 +37,12 @@ const PopupLogin = () => {
             token: "token",
           })
         );
-<<<<<<< HEAD
-        alert("Otp send to rej no :   Login SuccessFully !!");
-        setloginformflag(false);
-      } else {
-        alert("Mobile no not Register plz create account first");
-=======
         // alert("Otp send to rej no :   Login SuccessFully !!");
         toast.success("Login Successfully!!",{position: "top-center"});
         setloginformflag(false);
       } else {
         toast.error("Mobile no not Register plz create account first",{position: "top-center"})
         // alert("Mobile no not Register plz create account first");
->>>>>>> master
         setcreateaccflag(true);
       }
     } catch (err) {
@@ -78,12 +65,8 @@ const PopupLogin = () => {
       console.log(data);
       const mobnoexist = data.filter((i) => i.Mobno == mobileno);
       if (mobnoexist.length > 0) {
-<<<<<<< HEAD
-        alert("Mobile No  is Already Exist Please Login");
-=======
         toast.error("Mobile No  is Already Exist Please Login", {position: "top-center"});
         // alert("Mobile No  is Already Exist Please Login");
->>>>>>> master
         setcreateaccflag(false);
         setloginformflag(true);
       } else {
@@ -105,22 +88,14 @@ const PopupLogin = () => {
               token: "token",
             })
           );
-<<<<<<< HEAD
-          alert("Account Created Sucessfull");
-=======
           toast.success("Account Created Sucessfull",{position: "top-center"})
           // alert("Account Created Sucessfull");
->>>>>>> master
           setcreateaccflag(false);
           setloginformflag(false);
           // nevigate('/')
         } else {
-<<<<<<< HEAD
-          alert("enter all data");
-=======
           toast.warning("Enter All Data !", {position: "top-center",});
           // alert("enter all data");
->>>>>>> master
         }
       }
     } catch (error) {
@@ -129,10 +104,7 @@ const PopupLogin = () => {
   };
   return (
     <>
-<<<<<<< HEAD
-=======
     <ToastContainer/>
->>>>>>> master
     {/* {loading && <p> Loading ......</p>} */}
       {loginfromflag && (
         <div className="il-popup light js-il-popup-body">
