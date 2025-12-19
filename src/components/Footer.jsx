@@ -121,15 +121,15 @@ function Footer() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography component="div">
                   <div className="accordion-body" style={{ display: "block" }}>
                     <div className="col-footer-wrapper">
                       <div className="col-footer-content">
                         <h4>Products</h4>
-                        {data.footer1.Products.map((i) => {
+                        {data.footer1.Products.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -138,10 +138,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>Services</h4>
-                        {data.footer1.Services.map((i) => {
+                        {data.footer1.Services.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul  key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -150,10 +150,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>Legal</h4>
-                        {data.footer1.Legal.map((i) => {
+                        {data.footer1.Legal.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul  key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -162,10 +162,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>About Us</h4>
-                        {data.footer1.AboutUs.map((i) => {
+                        {data.footer1.AboutUs.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul  key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -174,10 +174,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>Others</h4>
-                        {data.footer1.Others.map((i) => {
+                        {data.footer1.Others.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -211,15 +211,15 @@ function Footer() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography component="div">
                   <div className="accordion-body" style={{ display: "block" }}>
                     <div className="col-footer-wrapper">
                       <div className="col-footer-content">
                         <h4>Products</h4>
-                        {data.footer2.InfoCenter.map((i) => {
+                        {data.footer2.InfoCenter.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -228,10 +228,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>Services</h4>
-                        {data.footer2.Renewal.map((i) => {
+                        {data.footer2.Renewal.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -240,10 +240,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>Legal</h4>
-                        {data.footer2.Claims.map((i) => {
+                        {data.footer2.Claims.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -252,10 +252,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>About Us</h4>
-                        {data.footer2.Help.map((i) => {
+                        {data.footer2.Help.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -264,10 +264,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>Others</h4>
-                        {data.footer2.CustomerReviews.map((i) => {
+                        {data.footer2.CustomerReviews.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -301,15 +301,15 @@ function Footer() {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
+                <Typography component="div">
                   <div className="accordion-body" style={{ display: "block" }}>
                     <div className="col-footer-wrapper">
                       <div className="col-footer-content">
                         <h4>Products</h4>
-                        {data.footer3.CarInsurance.map((i) => {
+                        {data.footer3.CarInsurance.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -318,10 +318,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>Services</h4>
-                        {data.footer3.TwoWheelerInsurance.map((i) => {
+                        {data.footer3.TwoWheelerInsurance.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -330,10 +330,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>Legal</h4>
-                        {data.footer3.HealthInsurance.map((i) => {
+                        {data.footer3.HealthInsurance.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -342,10 +342,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>About Us</h4>
-                        {data.footer3.TravelInsurance.map((i) => {
+                        {data.footer3.TravelInsurance.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>
@@ -354,10 +354,10 @@ function Footer() {
                       </div>
                       <div className="col-footer-content">
                         <h4>Others</h4>
-                        {data.footer3.SMEInsurance.map((i) => {
+                        {data.footer3.SMEInsurance.map((i,index) => {
                           return (
-                            <ul>
-                              <li>
+                            <ul key={index}>
+                              <li key={index}>
                                 <a href="">{i}</a>
                               </li>
                             </ul>

@@ -11,8 +11,8 @@ function HomeInsurance() {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     insuranceFor: "",
-    mobile: user.Mobno,
-    email: user.email,
+    mobile: user?.Mobno,
+    email: user?.email,
     pincode: "",
     carpetArea: "",
     constructionCost: "",

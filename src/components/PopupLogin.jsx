@@ -18,7 +18,7 @@ const PopupLogin = () => {
   const email = useRef();
   const [createaccflag, setcreateaccflag] = useState(false);
   const [loginfromflag, setloginformflag] = useState(true);
-  //  const nevigate = useNavigate()
+   const nevigate = useNavigate()
   const handelLogin = async () => {
     try {
       dispatch(loginStart());
@@ -92,7 +92,7 @@ const PopupLogin = () => {
           // alert("Account Created Sucessfull");
           setcreateaccflag(false);
           setloginformflag(false);
-          // nevigate('/')
+          nevigate('/')
         } else {
           toast.warning("Enter All Data !", {position: "top-center",});
           // alert("enter all data");

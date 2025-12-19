@@ -139,7 +139,7 @@ const handleformsubmit = async (e) => {
                       type="tel"
                       name=""
                       id=""
-                      value={user ? user.Mobno : ""}
+                      defaultValue={user ? user.Mobno : ""}
                       placeholder="Enter mobile no."
                     />
                   </div>
@@ -149,7 +149,7 @@ const handleformsubmit = async (e) => {
                       type="email"
                       name=""
                       id=""
-                      value={user ? user.email : ""}
+                      defaultValue={user?.email || ""}
                       placeholder="Enter email address"
                     />
                   </div>
@@ -181,7 +181,7 @@ const handleformsubmit = async (e) => {
                       type="tel"
                       name=""
                       id=""
-                      value={user ? user.Mobno : ""}
+                      defaultValue={user ? user.Mobno : ""}
                       placeholder="Enter mobile no."
                     />
                   </div>
@@ -190,7 +190,7 @@ const handleformsubmit = async (e) => {
                     <input
                       type="email"
                       placeholder="Enter email address"
-                      value={user ? user.email : ""}
+                      defaultValue={user ? user.email : ""}
                     />
                   </div>
                   <div className="form-group">
@@ -827,88 +827,93 @@ a travel plan every time you plan a trip"
           </div>
         </div>
 
-        <div class="section-6">
-          <div class="section-6-title">
-            <h2>#LearnCPRSaveALife</h2>
-            <p>
-              Did you know? Effective CPR can double the chance of a person{" "}
-              <br /> surviving a cardiac arrest.
-            </p>
-          </div>
-          <div>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/wM6oEqHEDzM?si=8C0gyQvig2NgUmx0"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
+        <div className="section-6">
+  <div className="section-6-title">
+    <h2>#LearnCPRSaveALife</h2>
+    <p>
+      Did you know? Effective CPR can double the chance of a person{" "}
+      <br /> surviving a cardiac arrest.
+    </p>
+  </div>
 
-        <div class="row section-7">
-          <div class="col-sm-12 col-md-6 d-flex align-items-start">
-            <div>
-              <div class="pmfby-logo mb-3">
-                <img
-                  src={data.PMFBY[0].logo}
-                  alt="pmfby-logo"
-                  class="img-fluid"
-                />
-              </div>
-              <div class="pmfby-block">
-                <h2>{data.PMFBY[0].title}</h2>
-                <p>{data.PMFBY[0].des}</p>
+  <div>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/wM6oEqHEDzM?si=8C0gyQvig2NgUmx0"
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
+
+<div className="row section-7">
+  <div className="col-sm-12 col-md-6 d-flex align-items-start">
+    <div>
+      <div className="pmfby-logo mb-3">
+        <img
+          src={data.PMFBY[0].logo}
+          alt="pmfby-logo"
+          className="img-fluid"
+        />
+      </div>
+
+      <div className="pmfby-block">
+        <h2>{data.PMFBY[0].title}</h2>
+        <p>{data.PMFBY[0].des}</p>
+      </div>
+    </div>
+  </div>
+
+  <div className="col-sm-12 col-md-6 fraud-section">
+    <div
+      id="carousel-slide"
+      className="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div className="carousel-indicators fraud-button">
+        <button
+          type="button"
+          data-bs-target="#carousel-slide"
+          data-bs-slide-to="0"
+          className="active"
+          aria-current="true"
+        ></button>
+
+        <button
+          type="button"
+          data-bs-target="#carousel-slide"
+          data-bs-slide-to="1"
+        ></button>
+      </div>
+
+      <div className="carousel-inner">
+        {data.FraudAwareness.map((i, index) => (
+          <div
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
+            key={index}
+          >
+            <img src={i.logo} alt="fraud-logo" className="img-fluid" />
+
+            <div className="fraud-block mt-3">
+              <h2>{i.title}</h2>
+              <div className="fraud-block-content">
+                <p>{i.des}</p>
+                <a href={`mailto:${i.mail}`}>
+                  <strong>{i.mail}</strong>
+                </a>
               </div>
             </div>
           </div>
-          <div className="col-sm-12 col-md-6 fraud-section">
-            <div
-              id="carousel-slide"
-              className="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div className="carousel-indicators fraud-button">
-                <button
-                  type="button"
-                  data-bs-target="#carousel-slide"
-                  data-bs-slide-to="0"
-                  className="active"
-                  aria-current="true"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carousel-slide"
-                  data-bs-slide-to="1"
-                ></button>
-              </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
 
-              <div className="carousel-inner">
-                {data.FraudAwareness.map((i, index) => (
-                  <div
-                    className={`carousel-item ${index === 0 ? "active" : ""}`}
-                    key={index}
-                  >
-                    <img src={i.logo} alt="fraud-logo" className="img-fluid" />
-
-                    <div className="fraud-block mt-3">
-                      <h2>{i.title}</h2>
-                      <div className="fraud-block-content">
-                        <p>{i.des}</p>
-                        <a href={`mailto:${i.mail}`}>
-                          <strong>{i.mail}</strong>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
 
 
         <div className="row section-8">
