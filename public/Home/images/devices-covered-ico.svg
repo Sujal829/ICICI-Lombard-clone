@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="39" viewBox="0 0 37 39">
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#F26624" d="M29 34.4c0-.552-.448-1-1-1s-1 .448-1 1 .448 1 1 1 1-.448 1-1" transform="translate(1 1)" />
+    <path stroke="#F26624" stroke-linecap="round" stroke-width="1.6" d="M27.2 11.2h5.224c1.533 0 2.776 1.243 2.776 2.776v20.048c0 1.533-1.243 2.776-2.776 2.776h-8.848c-1.533 0-2.776-1.243-2.776-2.776V13.976c0-1.533 1.243-2.776 2.776-2.776H27.2" transform="translate(1 1)" />
+    <path stroke="#F26624" stroke-linecap="round" stroke-width=".8" d="M20.8 14.8L35.2 14.8M20.8 32.4L35.2 32.4M26.8 13.2L29.2 13.2" transform="translate(1 1)" />
+    <path fill="#F26624" d="M14.6 29.2c0-.552-.448-1-1-1s-1 .448-1 1 .448 1 1 1 1-.448 1-1" transform="translate(1 1)" />
+    <path stroke="#F26624" stroke-linecap="round" stroke-width=".8" d="M12 2L15.2 2" transform="translate(1 1)" />
+    <path stroke="#F26624" stroke-linecap="round" stroke-width="1.6" d="M17.6 32H2.4C1.074 32 0 30.926 0 29.6V2.4C0 1.074 1.074 0 2.4 0h22.4c1.326 0 2.4 1.074 2.4 2.4V8" transform="translate(1 1)" />
+    <path stroke="#F26624" stroke-linecap="round" stroke-width=".8" d="M0 27.2L16.8 27.2" transform="translate(1 1)" />
+    <path stroke="#F26624" stroke-width=".8" d="M0 4L27.2 4" transform="translate(1 1)" />
+  </g>
+</svg>
