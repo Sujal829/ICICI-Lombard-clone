@@ -43,6 +43,7 @@ const PopupLogin = () => {
       } else {
         toast.error("Mobile no not Register plz create account first",{position: "top-center"})
         // alert("Mobile no not Register plz create account first");
+        // /
         setcreateaccflag(true);
       }
     } catch (err) {
