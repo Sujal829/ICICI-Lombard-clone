@@ -114,6 +114,7 @@ function Home() {
           <hr />
           <div className="home-forms">
             {inc == 5 && navigate("/homeinsuranc")}
+            {inc == 6 && navigate("/branches")}
             {inc == 1 && (
               <div className="form-1">
                 <form action="" onSubmit={handleformsubmit}>
