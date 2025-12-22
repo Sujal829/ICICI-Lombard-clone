@@ -7,6 +7,7 @@ import Profile from '../Pages/Profile'
 import PrivateRoute from './PrivateRoute'
 import HomeInsurance from '../Pages/Home/HomeInsurance'
 import Branches from '../pages/Branches/Branches'
+import Corporate from '../pages/Home/Corporate'
 function PageRoutes() {
   return (
     <>
@@ -23,6 +24,8 @@ function PageRoutes() {
           } />
         <Route path='/homeinsuranc' element={<HomeInsurance/>}/>
         <Route path='/branches' element={<Branches/>} /> 
+        <Route path='/corporate' element={<Corporate/>} /> 
+
     </Routes>
     </>
     </>

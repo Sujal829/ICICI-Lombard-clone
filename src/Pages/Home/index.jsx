@@ -8,6 +8,7 @@ import localstate from "../../Services/localstate";
 import { setuser } from "../../Redux/UserSlice";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import MemberDetails from "../../components/Form";
 function Home() {
   const [inc, setinc] = useState(1);
   const [adultscount, setadultscount] = useState(0);
@@ -228,83 +229,114 @@ function Home() {
                     <p onClick={() => setincmemflag(!incmemflag)}>
                       Add Members
                     </p>
-                    {incmemflag && (
-                      <div className="popup-form">
-                        <div>
-                          <p>
-                            <b>Adult(s)</b> (18 years & above)
-                          </p>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setadultscount(adultscount - 1);
-                            }}
-                          >
-                            -
-                          </button>
-                          <b>{adultscount}</b>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setadultscount(adultscount + 1);
-                            }}
-                          >
-                            +
-                          </button>
-                        </div>
-                        <div>
-                          <p>
-                            <b>Adult(s)</b> (18 years & above)
-                          </p>
-                          <button
-                            onClick={() => setadultscount(adultscount - 1)}
-                          >
-                            -
-                          </button>
-                          <b>{adultscount}</b>
-                          <button
-                            onClick={() => setadultscount(adultscount + 1)}
-                          >
-                            +
-                          </button>
-                        </div>
-                        <button
-                          onClick={() => {
-                            setincmemflag(false);
-                          }}
-                        >
-                          Done
-                        </button>
-                      </div>
-                    )}
+                    {incmemflag && <MemberDetails />}
                   </div>
                   <div className="form-group">
                     <label htmlFor="">Contact Details</label>
-                    <div onClick={() => setformflag(true)}>
-                      <p>Add Details</p>
+                    <div>
+                      <p onClick={() => setformflag(!formflag)}>Add Details</p>
                       {formflag && (
-                        <div
-                          className={formflag ? `d-block popup-form` : `d-none`}
-                        >
-                          <form>
-                            <label htmlFor="">Mobile No</label>
-                            <input type="text" placeholder="Enter mobile no" />
-                            <label htmlFor="">Email </label>
-                            <input type="text" placeholder="Enter Email " />
-                            <label htmlFor="">Pincode</label>
-                            <input type="text" placeholder="Enter Pincode " />
-                            <label htmlFor="">Your Name</label>
-                            <input type="text" placeholder="Enter Your name" />
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setformflag(false);
-                              }}
-                            >
-                              {" "}
-                              Done
-                            </button>
-                          </form>
+                        <div className="member-detail-popup contact-detail-wraper contact-pop">
+                          <div className="row pad-top3 contact-pop healthflow">
+                            {/* Mobile Number */}
+                            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-bot2 contact-pop">
+                              <div className="ui-form-block contact-pop">
+                                <div className="input-block mobile-block ripple-bar focus mar-bottom contact-pop">
+                                  <label
+                                    htmlFor="valid-popmobilnumber"
+                                    className="contact-pop"
+                                  >
+                                    {/* Mobile no. <sup>*</sup> */}
+                                  </label>
+                                  <input
+                                    type="tel"
+                                    id="valid-popmobilnumber"
+                                    maxLength="10"
+                                    autoComplete="off"
+                                    placeholder="Enter mobile no"
+                                    className="tel val-mob val-req numeric contact-pop"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Email */}
+                            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-pop pad-bot2">
+                              <div className="ui-form-block contact-pop">
+                                <div className="input-block mobile-block ripple-bar focus mar-bottom contact-pop">
+                                  <label
+                                    htmlFor="valid-popemil"
+                                    className="contact-pop"
+                                  >
+                                    {/* Email. <sup>*</sup> */}
+                                  </label>
+                                  <input
+                                    type="email"
+                                    id="valid-popemil"
+                                    autoComplete="off"
+                                    placeholder="Enter email address"
+                                    className="contact-pop"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Pincode */}
+                            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-pop pad-bot2">
+                              <div className="ui-form-block contact-pop">
+                                <div className="input-block mobile-block ripple-bar focus mar-bottom contact-pop">
+                                  <label
+                                    htmlFor="valid-poppincode"
+                                    className="contact-pop"
+                                  >
+                                    {/* Pincode. <sup>*</sup> */}
+                                  </label>
+                                  <input
+                                    type="tel"
+                                    id="valid-poppincode"
+                                    maxLength="6"
+                                    autoComplete="off"
+                                    placeholder="Enter Pincode"
+                                    className="tel numeric contact-pop"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Name */}
+                            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-pop pad-bot2">
+                              <div className="ui-form-block contact-pop">
+                                <div className="input-block mobile-block ripple-bar focus mar-bottom contact-pop">
+                                  <label
+                                    htmlFor="your-name"
+                                    className="contact-pop"
+                                  >
+                                    {/* Your name */}
+                                  </label>
+                                  <input
+                                    type="text"
+                                    id="your-name"
+                                    autoComplete="off"
+                                    placeholder="Enter your name"
+                                    className="contact-pop"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Done Button */}
+                            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right contact-pop">
+                              <div className="ui-form-block contact-pop">
+                                <button
+                                onClick={()=>setformflag(false)}
+                                  type="button"
+                                  className="btn-done btn-contact-details contact-pop"
+                                >
+                                  Done
+                                </button>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>

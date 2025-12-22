@@ -1,21 +1,16 @@
-import React, { useState } from "react";
 import "../assets/CSS/v1.css";
 import PopupLogin from "./PopupLogin";
 // import localstate from "../Services/localstate";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../Redux/UserSlice";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ProfileMenu from "./ProfileMenu";
 function Header() {
-  const [popuplogin, setpopuplogin] = useState(false);
-  // const user = JSON.parse(localStorage.getItem("token"))
   const user = useSelector((state) => state.auth.user);
   // const user = JSON.parse(localstate.getlocatoken())
-  const dispatch = useDispatch();
-  // console.log(user);
   const navigate = useNavigate();
   return (
     <div>
-      <header>
+      <Header>
         <div className="container-fluid top-nav">
           <div className="row">
             <div className="col-lg-12 top-nav-right d-flex align-items-center">
@@ -55,17 +50,8 @@ function Header() {
                 </a>
               </div>
               <div>
-                {user ? (
-                  <button onClick={async () => {await dispatch(logout()); navigate("/")}}>
-                    Logout
-                  </button>
-                ) : (
-                  <button onClick={() => setpopuplogin(!popuplogin)}>
-                    Login
-                  </button>
-                )}
-                {user && <b onClick={()=>navigate('/dashboard')}>Welcome {user.FirstName} !!</b>}
-                {popuplogin && <PopupLogin />}
+                <ProfileMenu isLoggedIn={user}/>
+                {/* {popuplogin && <PopupLogin />} */}
               </div>
             </div>
           </div>
@@ -582,7 +568,7 @@ function Header() {
             </div>
           </div>
         </nav>
-      </header>
+      </Header>
     </div>
   );
 }

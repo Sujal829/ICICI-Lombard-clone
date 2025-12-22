@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 const Profile = () => {
   const user = useSelector((state) => state.auth.user);
-  console.log(user)
   return (
     <div className="container-fluid py-3 py-md-4">
       <div className="row g-4">

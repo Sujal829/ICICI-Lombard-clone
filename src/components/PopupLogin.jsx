@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import "../assets/CSS/v1.css";
 import UseApi from "../Services/useApi";
 import axios from "axios";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginStart, loginSuccess } from "../Redux/UserSlice";
 import { ToastContainer, toast } from 'react-toastify';
-const PopupLogin = () => {
+const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccflag}) => {
   const dispatch = useDispatch();
   const { loading, error, isAuthenticated } = useSelector(
     (state) => state.auth
@@ -16,8 +16,7 @@ const PopupLogin = () => {
   const fname = useRef();
   const lname = useRef();
   const email = useRef();
-  const [createaccflag, setcreateaccflag] = useState(false);
-  const [loginfromflag, setloginformflag] = useState(true);
+  
    const nevigate = useNavigate()
   const handelLogin = async () => {
     try {
@@ -63,7 +62,6 @@ const PopupLogin = () => {
       const mobileno = mobno.current.value;
       const emailid = email.current.value
       const data = await UseApi();
-      console.log(data);
       const mobnoexist = data.filter((i) => i.Mobno == mobileno);
       if (mobnoexist.length > 0) {
         toast.error("Mobile No  is Already Exist Please Login", {position: "top-center"});
@@ -89,7 +87,7 @@ const PopupLogin = () => {
               token: "token",
             })
           );
-          toast.success("Account Created Sucessfull",{position: "top-center"})
+          toast.success("Account Created Sucessfull",{position: "top-center"});
           // alert("Account Created Sucessfull");
           setcreateaccflag(false);
           setloginformflag(false);
@@ -109,7 +107,7 @@ const PopupLogin = () => {
     {/* {loading && <p> Loading ......</p>} */}
       {loginfromflag && (
         <div className="il-popup light js-il-popup-body">
-          <a className="close js-il-popup-close"></a>
+          <button className="" onClick={()=>setloginformflag(false)}>Close</button>
 
           <div className="il-content">
             <div className="dark-form login-otp-wrap">
@@ -119,8 +117,9 @@ const PopupLogin = () => {
                   <p>Enter your mobile number to login</p>
 
                   <div className="il-input-block mobile-input">
-                    <label htmlFor="otpMobile">Mobile no.</label>
+                    {/* <label htmlFor="otpMobile">Mobile no.</label> */}
                     <input
+                    placeholder="Mob.No"
                       ref={mobno}
                       type="tel"
                       maxLength="10"
@@ -159,7 +158,7 @@ const PopupLogin = () => {
 
       {createaccflag && (
         <div className="il-popup light js-il-popup-body">
-          <a className="close js-il-popup-close"></a>
+          <button onClick={()=>setcreateaccflag(false)}>Close</button>
 
           <div className="il-content">
             <div className="dark-form login-otp-wrap">
