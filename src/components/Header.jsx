@@ -10,7 +10,7 @@ function Header() {
   const navigate = useNavigate();
   return (
     <div>
-      <Header>
+      <header>
         <div className="container-fluid top-nav">
           <div className="row">
             <div className="col-lg-12 top-nav-right d-flex align-items-center">
@@ -568,7 +568,7 @@ function Header() {
             </div>
           </div>
         </nav>
-      </Header>
+      </header>
     </div>
   );
 }

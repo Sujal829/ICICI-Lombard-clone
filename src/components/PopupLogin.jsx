@@ -103,7 +103,6 @@ const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccfl
   };
   return (
     <>
-    <ToastContainer/>
     {/* {loading && <p> Loading ......</p>} */}
       {loginfromflag && (
         <div className="il-popup light js-il-popup-body">

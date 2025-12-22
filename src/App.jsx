@@ -9,11 +9,13 @@ import PageRoutes from './Routes/Routes'
 import Footer from './components/Footer'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {Snowfall} from 'react-snowfall'
+import { ToastContainer } from 'react-toastify'
 function App() {
   const [count, setCount] = useState(0)
   return (
     <>
     {/* <Snowfall /> */}
+    <ToastContainer position="top-center"/>
     <Header />
     <PageRoutes />
     <Footer />

@@ -1,5 +1,4 @@
 import React from "react";
-import localstate from "../../Services/localstate";
 import { useSelector } from "react-redux";
 
 const Profile = () => {

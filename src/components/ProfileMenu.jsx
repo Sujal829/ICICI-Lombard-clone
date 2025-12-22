@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -10,16 +10,17 @@ import { logout } from "../Redux/UserSlice";
 import PopupLogin from "./PopupLogin";
 
 export default function ProfileMenu({ isLoggedIn }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [createaccflag, setcreateaccflag] = React.useState(false);
-  const [loginfromflag, setloginformflag] = React.useState(false);
+  const [createaccflag, setcreateaccflag] = useState(false);
+  const [loginfromflag, setloginformflag] = useState(false);
 
   const handleOpen = (event) => {
+    if (anchorEl) return;
     setAnchorEl(event.currentTarget);
   };
 
@@ -29,21 +30,17 @@ export default function ProfileMenu({ isLoggedIn }) {
 
   return (
     <>
-      {/* Profile Icon */}
       <IconButton onMouseEnter={handleOpen} sx={{ p: 0 }}>
         <Avatar alt="Profile" />
       </IconButton>
 
       {isLoggedIn && <span>Welcome {isLoggedIn.FirstName} !!</span>}
 
-      {/* Profile Menu */}
       <Menu
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
         MenuListProps={{ onMouseLeave: handleClose }}
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-        transformOrigin={{ vertical: "top", horizontal: "right" }}
       >
         {isLoggedIn
           ? [
@@ -95,13 +92,14 @@ export default function ProfileMenu({ isLoggedIn }) {
             ]}
       </Menu>
 
-      {/* Login / Signup Popup */}
-      <PopupLogin
-        loginfromflag={loginfromflag}
-        setloginformflag={setloginformflag}
-        createaccflag={createaccflag}
-        setcreateaccflag={setcreateaccflag}
-      />
+      {(loginfromflag || createaccflag) && (
+        <PopupLogin
+          loginfromflag={loginfromflag}
+          setloginformflag={setloginformflag}
+          createaccflag={createaccflag}
+          setcreateaccflag={setcreateaccflag}
+        />
+      )}
     </>
   );
 }
