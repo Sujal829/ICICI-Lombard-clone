@@ -34,7 +34,9 @@ function PageRoutes() {
             <AdminPage />
           </ProtectedRoute>
           } />
+
         <Route path="/admin/user/:id" element={<Userinfo />} />  
+        
     </Routes>
     </>
     </>
