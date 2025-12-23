@@ -7,6 +7,7 @@ const Profile = () => {
     <div className="container-fluid py-3 py-md-4">
       <div className="row g-4">
         {/* SIDEBAR */}
+        
         <div className="col-12 col-md-4 col-lg-3">
           <div className="card sidebar-card p-4 shadow-sm h-100">
             <div className="text-center mb-3">
