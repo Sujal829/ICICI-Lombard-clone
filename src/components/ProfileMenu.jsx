@@ -43,56 +43,80 @@ export default function ProfileMenu({ isLoggedIn }) {
         MenuListProps={{ onMouseLeave: handleClose }}
       >
         {isLoggedIn
-          ? [
-              <MenuItem
-                key="profile"
-                onClick={() => {
-                  handleClose();
-                  navigate("/dashboard");
-                }}
-              >
-                My Profile
-              </MenuItem>,
+  ? isLoggedIn.Mobno === "0123456789"
+    ? [
+        <MenuItem
+          key="admin"
+          onClick={() => {
+            handleClose();
+            navigate("/admin");
+          }}
+        >
+          Admin
+        </MenuItem>,
 
-              <Divider key="divider" />,
+        <Divider key="divider" />,
 
-              <MenuItem
-                key="logout"
-                onClick={() => {
-                  handleClose();
-                  dispatch(logout());
-                  navigate("/");
-                }}
-              >
-                Logout
-              </MenuItem>,
-            ]
-          : [
-              <MenuItem
-                key="login"
-                onClick={() => {
-                  handleClose();
-                  setloginformflag(true);
-                  setcreateaccflag(false);
-                }}
-              >
-                Login
-              </MenuItem>,
+        <MenuItem
+          key="logout"
+          onClick={() => {
+            handleClose();
+            dispatch(logout());
+            navigate("/");
+          }}
+        >
+          Logout
+        </MenuItem>,
+      ]
+    : [
+        <MenuItem
+          key="profile"
+          onClick={() => {
+            handleClose();
+            navigate("/dashboard");
+          }}
+        >
+          My Profile
+        </MenuItem>,
 
-              <MenuItem
-                key="signup"
-                onClick={() => {
-                  handleClose();
-                  setcreateaccflag(true);
-                  setloginformflag(false);
-                }}
-              >
-                Sign Up
-              </MenuItem>,
-            ]}
-      </Menu>
+        <Divider key="divider" />,
 
-      {(loginfromflag || createaccflag) && (
+        <MenuItem
+          key="logout"
+          onClick={() => {
+            handleClose();
+            dispatch(logout());
+            navigate("/");
+          }}
+        >
+          Logout
+        </MenuItem>,
+      ]
+  : [
+      <MenuItem
+        key="login"
+        onClick={() => {
+          handleClose();
+          setloginformflag(true);
+          setcreateaccflag(false);
+        }}
+      >
+        Login
+      </MenuItem>,
+
+      <MenuItem
+        key="signup"
+        onClick={() => {
+          handleClose();
+          setcreateaccflag(true);
+          setloginformflag(false);
+        }}
+      >
+        Sign Up
+      </MenuItem>,
+    ]}
+    </Menu>
+    {(loginfromflag || createaccflag) && (
         <PopupLogin
           loginfromflag={loginfromflag}
           setloginformflag={setloginformflag}

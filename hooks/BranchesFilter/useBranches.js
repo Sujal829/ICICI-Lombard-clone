@@ -13,15 +13,15 @@ function useBranches(){
     }
     
     const filtercity = (state)=>{
-          const filtercity = statelist.filter((i)=>i.state == state);
+          const filtercity = statelist?.filter((i)=>i.state == state);
           setcity(filtercity)
     }
     const filterbranches = (city)=>{
-        const filterbranch = statelist.filter((i)=>i.city==city);
+        const filterbranch = statelist?.filter((i)=>i.city==city);
         setbranches(filterbranch)
     }
     const selectedbranch = (selectedbranch)=>{
-        const finalbranch = city.filter((i)=>i.branchName==selectedbranch)
+        const finalbranch = city?.filter((i)=>i.branchName==selectedbranch)
         setfinalbranchdata(finalbranch)
     }
 

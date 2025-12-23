@@ -3,7 +3,7 @@ import "../assets/CSS/v1.css";
 import UseApi from "../Services/useApi";
 import axios from "axios";
 import localstate from "../Services/localstate";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginStart, loginSuccess } from "../Redux/UserSlice";
 import { ToastContainer, toast } from 'react-toastify';
@@ -39,6 +39,7 @@ const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccfl
         // alert("Otp send to rej no :   Login SuccessFully !!");
         toast.success("Login Successfully!!",{position: "top-center"});
         setloginformflag(false);
+        if(no == '0123456789') return <Navigate to="/admin" replace />;
       } else {
         toast.error("Mobile no not Register plz create account first",{position: "top-center"})
         // alert("Mobile no not Register plz create account first");

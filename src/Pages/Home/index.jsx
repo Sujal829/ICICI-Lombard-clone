@@ -28,7 +28,6 @@ function Home() {
       toast.error("User not logged in. Login first", {
         position: "top-center",
       });
-      alert("User not logged in. Login first");
       return;
     }
 

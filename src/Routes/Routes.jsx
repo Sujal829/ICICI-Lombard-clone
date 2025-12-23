@@ -8,6 +8,9 @@ import PrivateRoute from './PrivateRoute'
 import HomeInsurance from '../Pages/Home/HomeInsurance'
 import Branches from '../pages/Branches/Branches'
 import Corporate from '../pages/Home/Corporate'
+import AdminPage from '../pages/Admin/AdminPage'
+import Userinfo from '../pages/Admin/Userinfo'
+import ProtectedRoute from './ProtectedRoute'
 function PageRoutes() {
   return (
     <>
@@ -26,6 +29,12 @@ function PageRoutes() {
         <Route path='/branches' element={<Branches/>} /> 
         <Route path='/corporate' element={<Corporate/>} /> 
 
+        <Route path="/admin" element={
+          <ProtectedRoute>
+            <AdminPage />
+          </ProtectedRoute>
+          } />
+        <Route path="/admin/user/:id" element={<Userinfo />} />  
     </Routes>
     </>
     </>

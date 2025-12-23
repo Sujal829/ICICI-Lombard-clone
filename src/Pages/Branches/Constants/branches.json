@@ -97,5 +97,96 @@
     "address": "Banjara Hills, Hyderabad",
     "contact": "040-40000002",
     "pincode": "500034"
+  },
+  {
+    "id": 12,
+    "branchName": "Ahmedabad CG Road Branch",
+    "state": "Gujarat",
+    "city": "Ahmedabad",
+    "address": "CG Road, Ahmedabad",
+    "contact": "079-40000001",
+    "pincode": "380009"
+  },
+  {
+    "id": 13,
+    "branchName": "Surat Ring Road Branch",
+    "state": "Gujarat",
+    "city": "Surat",
+    "address": "Ring Road, Surat",
+    "contact": "0261-40000001",
+    "pincode": "395002"
+  },
+  {
+    "id": 14,
+    "branchName": "Jaipur MI Road Branch",
+    "state": "Rajasthan",
+    "city": "Jaipur",
+    "address": "MI Road, Jaipur",
+    "contact": "0141-40000001",
+    "pincode": "302001"
+  },
+  {
+    "id": 15,
+    "branchName": "Udaipur City Branch",
+    "state": "Rajasthan",
+    "city": "Udaipur",
+    "address": "City Palace Road, Udaipur",
+    "contact": "0294-40000001",
+    "pincode": "313001"
+  },
+  {
+    "id": 16,
+    "branchName": "Kolkata Salt Lake Branch",
+    "state": "West Bengal",
+    "city": "Kolkata",
+    "address": "Salt Lake Sector V, Kolkata",
+    "contact": "033-40000001",
+    "pincode": "700091"
+  },
+  {
+    "id": 17,
+    "branchName": "Howrah Branch",
+    "state": "West Bengal",
+    "city": "Howrah",
+    "address": "Howrah Station Road",
+    "contact": "033-40000002",
+    "pincode": "711101"
+  },
+  {
+    "id": 18,
+    "branchName": "Lucknow Gomti Nagar Branch",
+    "state": "Uttar Pradesh",
+    "city": "Lucknow",
+    "address": "Gomti Nagar, Lucknow",
+    "contact": "0522-40000001",
+    "pincode": "226010"
+  },
+  {
+    "id": 19,
+    "branchName": "Noida Sector 62 Branch",
+    "state": "Uttar Pradesh",
+    "city": "Noida",
+    "address": "Sector 62, Noida",
+    "contact": "0120-40000001",
+    "pincode": "201309"
+  },
+  {
+    "id": 20,
+    "branchName": "Chandigarh Sector 17 Branch",
+    "state": "Chandigarh",
+    "city": "Chandigarh",
+    "address": "Sector 17, Chandigarh",
+    "contact": "0172-40000001",
+    "pincode": "160017"
+  },
+  {
+    "id": 21,
+    "branchName": "Indore Vijay Nagar Branch",
+    "state": "Madhya Pradesh",
+    "city": "Indore",
+    "address": "Vijay Nagar, Indore",
+    "contact": "0731-40000001",
+    "pincode": "452010"
   }
+
 ]
