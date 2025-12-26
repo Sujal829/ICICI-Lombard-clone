@@ -1,3 +1,4 @@
+import React from "react";
 import "../assets/CSS/v1.css";
 import PopupLogin from "./PopupLogin";
 // import localstate from "../Services/localstate";
@@ -15,7 +16,7 @@ function Header() {
           <div className="row">
             <div className="col-lg-12 top-nav-right d-flex align-items-center">
               {/* Contact */}
-              <div className="col-lg-2 col-sm-12 contact">
+              <div className="col-lg-2 col-sm-12 contact ">
                 <a href="#">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -1,13 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const user = useSelector((state) => state.auth.user);
+  const navigate = useNavigate()
   return (
     <div className="container-fluid py-3 py-md-4">
       <div className="row g-4">
         {/* SIDEBAR */}
-        
+
         <div className="col-12 col-md-4 col-lg-3">
           <div className="card sidebar-card p-4 shadow-sm h-100">
             <div className="text-center mb-3">
@@ -46,13 +48,13 @@ const Profile = () => {
         <div className="col-12 col-md-8 col-lg-9">
           {/* ADD POLICY BUTTON */}
           <div className="d-flex justify-content-center justify-content-md-end mb-3">
-            <button className="btn btn-warning text-white px-4">
+            <button className="btn btn-warning text-white px-4" onClick={()=>navigate("/")}>
               Add Policy
             </button>
           </div>
 
           {/* Full field STATE */}
-          {user.insurance.length > 0 && (
+          {user?.insurance?.length > 0 && (
             <div className="row g-3">
               {user.insurance.map((policy, index) => (
                 <div className="col-md-6" key={index}>
@@ -75,7 +77,7 @@ const Profile = () => {
               ))}
             </div>
           )}
-          {user.insurance.length === 0 && (
+          {user?.insurance?.length === 0 && (
             <div className="card policy-card shadow-sm p-4 p-md-5 text-center">
               <div className="mb-3">
                 <i className="bi bi-shield-fill text-warning fs-1">

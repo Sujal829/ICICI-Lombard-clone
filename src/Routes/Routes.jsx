@@ -14,7 +14,6 @@ import ProtectedRoute from './ProtectedRoute'
 function PageRoutes() {
   return (
     <>
-    <>
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/carinsurance' element={<CarInsurancePage/> }/>
@@ -36,9 +35,8 @@ function PageRoutes() {
           } />
 
         <Route path="/admin/user/:id" element={<Userinfo />} />  
-        
+
     </Routes>
-    </>
     </>
   )
 }

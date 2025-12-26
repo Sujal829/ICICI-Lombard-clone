@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -11,7 +12,6 @@ import Footer from './components/Footer'
 import {Snowfall} from 'react-snowfall'
 import { ToastContainer } from 'react-toastify'
 function App() {
-  const [count, setCount] = useState(0)
   return (
     <>
     {/* <Snowfall /> */}
