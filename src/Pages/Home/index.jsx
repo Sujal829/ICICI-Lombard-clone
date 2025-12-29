@@ -11,7 +11,7 @@ import { toast, ToastContainer } from "react-toastify";
 import MemberDetails from "../../components/Form";
 function Home() {
   const [inc, setinc] = useState(1);
-  const [adultscount, setadultscount] = useState(0);
+  // const [adultscount, setadultscount] = useState(0);
   const [formflag, setformflag] = useState(false);
   const [incmemflag, setincmemflag] = useState(false);
   const [travelScope, setTravelScope] = useState(false);
