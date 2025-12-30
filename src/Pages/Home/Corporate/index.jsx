@@ -1,5 +1,13 @@
 import React from "react";
-
+import {
+  industriesbanner,
+  slider3,
+  slider4,
+  weoffer1,
+  weoffer2,
+  weoffer3,
+} from "../../../assets";
+import "../../../App.css";
 const Corporate = () => {
   return (
     <>
@@ -37,8 +45,7 @@ const Corporate = () => {
             <div
               className="carousel-item active text-white"
               style={{
-                background:
-                  "url('../../../../public/Corporate/industries-banner1.png')",
+                background: `url(${industriesbanner})`,
               }}
             >
               <div className="container py-5">
@@ -67,8 +74,7 @@ const Corporate = () => {
             <div
               className="carousel-item bg-light"
               style={{
-                background:
-                  "url('../../../../public/Corporate/silder-img-4.jpg')",
+                background: `url(${slider4})`,
               }}
             >
               <div className="container py-5">
@@ -97,8 +103,7 @@ const Corporate = () => {
             <div
               className="carousel-item bg-secondary text-white"
               style={{
-                background:
-                  "url('../../../../public/Corporate/silder-img-3.jpg')",
+                background: `url(${slider3})`,
               }}
             >
               <div className="container py-5">
@@ -126,46 +131,33 @@ const Corporate = () => {
         </div>
       </section>
 
-        <section className="section-we-offer py-5">
-      <div className="container">
-        <div className="section-wrapper row text-center">
+      <section className="section-we-offer py-5 bg-light w-100 m-10 rounded-5">
+        <div className="container">
+          <div className="flex justify-center gap-6">
+            <div className="text-center">
+              <img src={weoffer1} className="mx-auto mb-3" />
+              <p>
+                We provide customized solutions and services for your business.
+              </p>
+            </div>
 
-          <div className="col-md-4 section-we-offer-content">
-            <img
-              src={""}
-              className="img-fluid mb-3"
-              alt="Customized Solutions"
-            />
-            <p>
-              We provide customized solutions and services for your business.
-            </p>
+            <div className="text-center">
+              <img src={weoffer2} className="mx-auto mb-3" />
+              <p>
+                We offer instant claims processing and support whenever you
+                need.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <img src={weoffer3} className="mx-auto mb-3" />
+              <p>
+                We offer you the flexibility to easily manage your policies.
+              </p>
+            </div>
           </div>
-
-          <div className="col-md-4 section-we-offer-content">
-            <img
-              src={""}
-              className="img-fluid mb-3"
-              alt="Instant Claims"
-            />
-            <p>
-              We offer instant claims processing and support whenever you need.
-            </p>
-          </div>
-
-          <div className="col-md-4 section-we-offer-content">
-            <img
-              src={""}
-              className="img-fluid mb-3"
-              alt="Policy Management"
-            />
-            <p>
-              We offer you the flexibility to easily manage your policies.
-            </p>
-          </div>
-
         </div>
-      </div>
-    </section>                  
+      </section>
 
       {/* ===== Products Section ===== */}
       <section className="py-5">
@@ -221,8 +213,6 @@ const Corporate = () => {
           </div>
         </div>
       </section>
-
-      
     </>
   );
 };
