@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "branchName": "Mumbai Andheri Branch",
+    "state": "Maharashtra",
+    "city": "Mumbai",
+    "address": "ICICI Lombard House, Andheri East, Mumbai",
+    "contact": "022-40000001",
+    "pincode": "400069"
+  },
+  {
+    "id": 2,
+    "branchName": "Mumbai Lower Parel Branch",
+    "state": "Maharashtra",
+    "city": "Mumbai",
+    "address": "Lower Parel West, Mumbai",
+    "contact": "022-40000002",
+    "pincode": "400013"
+  },
+  {
+    "id": 3,
+    "branchName": "Pune Branch",
+    "state": "Maharashtra",
+    "city": "Pune",
+    "address": "Baner Road, Pune",
+    "contact": "020-30000001",
+    "pincode": "411045"
+  },
+  {
+    "id": 4,
+    "branchName": "Delhi Connaught Place Branch",
+    "state": "Delhi",
+    "city": "New Delhi",
+    "address": "Connaught Place, New Delhi",
+    "contact": "011-40000001",
+    "pincode": "110001"
+  },
+  {
+    "id": 5,
+    "branchName": "Delhi Dwarka Branch",
+    "state": "Delhi",
+    "city": "New Delhi",
+    "address": "Sector 10, Dwarka, New Delhi",
+    "contact": "011-40000002",
+    "pincode": "110075"
+  },
+  {
+    "id": 6,
+    "branchName": "Bengaluru  Whitefield Branch",
+    "state": "Karnataka",
+    "city": "Bengaluru",
+    "address": "Whitefield Main Road, Bengaluru",
+    "contact": "080-40000001",
+    "pincode": "560066"
+  },
+  {
+    "id": 7,
+    "branchName": "Bengaluru  Indiranagar Branch",
+    "state": "Karnataka",
+    "city": "Bengaluru",
+    "address": "Indiranagar, Bengaluru",
+    "contact": "080-40000002",
+    "pincode": "560038"
+  },
+  {
+    "id": 8,
+    "branchName": "Chennai  T Nagar Branch",
+    "state": "Tamil Nadu",
+    "city": "Chennai",
+    "address": "T Nagar, Chennai",
+    "contact": "044-40000001",
+    "pincode": "600017"
+  },
+  {
+    "id": 9,
+    "branchName": "Chennai  OMR Branch",
+    "state": "Tamil Nadu",
+    "city": "Chennai",
+    "address": "Old Mahabalipuram Road, Chennai",
+    "contact": "044-40000002",
+    "pincode": "600096"
+  },
+  {
+    "id": 10,
+    "branchName": "Hyderabad  Hitech City Branch",
+    "state": "Telangana",
+    "city": "Hyderabad",
+    "address": "Hitech City, Hyderabad",
+    "contact": "040-40000001",
+    "pincode": "500081"
+  },
+  {
+    "id": 11,
+    "branchName": "Hyderabad  Banjara Hills Branch",
+    "state": "Telangana",
+    "city": "Hyderabad",
+    "address": "Banjara Hills, Hyderabad",
+    "contact": "040-40000002",
+    "pincode": "500034"
+  },
+  {
+    "id": 12,
+    "branchName": "Ahmedabad CG Road Branch",
+    "state": "Gujarat",
+    "city": "Ahmedabad",
+    "address": "CG Road, Ahmedabad",
+    "contact": "079-40000001",
+    "pincode": "380009"
+  },
+  {
+    "id": 13,
+    "branchName": "Surat Ring Road Branch",
+    "state": "Gujarat",
+    "city": "Surat",
+    "address": "Ring Road, Surat",
+    "contact": "0261-40000001",
+    "pincode": "395002"
+  },
+  {
+    "id": 14,
+    "branchName": "Jaipur MI Road Branch",
+    "state": "Rajasthan",
+    "city": "Jaipur",
+    "address": "MI Road, Jaipur",
+    "contact": "0141-40000001",
+    "pincode": "302001"
+  },
+  {
+    "id": 15,
+    "branchName": "Udaipur City Branch",
+    "state": "Rajasthan",
+    "city": "Udaipur",
+    "address": "City Palace Road, Udaipur",
+    "contact": "0294-40000001",
+    "pincode": "313001"
+  },
+  {
+    "id": 16,
+    "branchName": "Kolkata Salt Lake Branch",
+    "state": "West Bengal",
+    "city": "Kolkata",
+    "address": "Salt Lake Sector V, Kolkata",
+    "contact": "033-40000001",
+    "pincode": "700091"
+  },
+  {
+    "id": 17,
+    "branchName": "Howrah Branch",
+    "state": "West Bengal",
+    "city": "Howrah",
+    "address": "Howrah Station Road",
+    "contact": "033-40000002",
+    "pincode": "711101"
+  },
+  {
+    "id": 18,
+    "branchName": "Lucknow Gomti Nagar Branch",
+    "state": "Uttar Pradesh",
+    "city": "Lucknow",
+    "address": "Gomti Nagar, Lucknow",
+    "contact": "0522-40000001",
+    "pincode": "226010"
+  },
+  {
+    "id": 19,
+    "branchName": "Noida Sector 62 Branch",
+    "state": "Uttar Pradesh",
+    "city": "Noida",
+    "address": "Sector 62, Noida",
+    "contact": "0120-40000001",
+    "pincode": "201309"
+  },
+  {
+    "id": 20,
+    "branchName": "Chandigarh Sector 17 Branch",
+    "state": "Chandigarh",
+    "city": "Chandigarh",
+    "address": "Sector 17, Chandigarh",
+    "contact": "0172-40000001",
+    "pincode": "160017"
+  },
+  {
+    "id": 21,
+    "branchName": "Indore Vijay Nagar Branch",
+    "state": "Madhya Pradesh",
+    "city": "Indore",
+    "address": "Vijay Nagar, Indore",
+    "contact": "0731-40000001",
+    "pincode": "452010"
+  }
+
+]

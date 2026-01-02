@@ -1,0 +1,267 @@
+{
+  "incuranceTtypes": [
+    {
+      "id": "1",
+      "name": "Car",
+      "image": "../../../public/Home/images/car-icon.svg"
+    },
+    {
+      "id": "2",
+      "name": "Bike",
+      "image": "../../../public//Home/images/scotter-icon.svg"
+    },
+    {
+      "id": "3",
+      "name": "Health",
+      "image": "../../../public/Home/images/health-icon.svg"
+    },
+    {
+      "id": "4",
+      "name": "Travle",
+      "image": "../../../public/Home/images/travel-icon.svg"
+    },
+    {
+      "id": "5",
+      "name": "Home",
+      "image": "../../../public/Home/images/home-icon.svg"
+    },
+    {
+      "id": "6",
+      "name": "SME",
+      "image": "../../../public/Home/images/sme-icon.svg"
+    },
+    {
+      "id": "7",
+      "name": "Corporate",
+      "image": "../../../public/Home/images/corporate-icon.svg"
+    },
+    {
+      "id": "8",
+      "name": "Renewal",
+      "image": "../../../public/Home/images/renewal-icon.svg"
+    }
+  ],
+  "aside": [
+    {
+      "id": "0",
+      "url": "../../../public/Home/images/aside-1.jpg"
+    },
+    {
+      "id": "1",
+      "url": "../../../public/Home/images/aside-1.jpg"
+    },
+    {
+      "id": "2",
+      "url": "../../../public/Home/images/aside-2.jpg"
+    },
+    {
+      "id": "3",
+      "url": "../../../public/Home/images/aside-3.jpg"
+    },
+    {
+      "id": "4",
+      "url": "../../../public/Home/images/aside-4.jpg"
+    },
+    {
+      "id": "5",
+      "url": "../../../public/Home/images/aside-5.png"
+    },
+    {
+      "id": "6",
+      "url": "../../../public/Home/images/aside-6.png"
+    },
+    {
+      "id": "7",
+      "url": "../../../public/Home/images/aside-7.jpg"
+    },
+    {
+      "id": "8",
+      "url": "../../../public/Home/images/aside-8.png"
+    },
+    {
+      "id": "9",
+      "url": "../../../public/Home/images/aside-9.jpg"
+    },
+    {
+      "id": "10",
+      "url": "../../../public/Home/images/aside-10.jpg"
+    },
+    {
+      "id": "11",
+      "url": "../../../public/Home/images/aside-11.jpg"
+    },
+    {
+      "id": "12",
+      "url": "../../../public/Home/images/aside-12.png"
+    },
+    {
+      "id": "13",
+      "url": "../../../public/Home/images/aside-13.jpg"
+    },
+    {
+      "id": "14",
+      "url": "../../../public/Home/images/aside-14.png"
+    },
+    {
+      "id": "15",
+      "url": "../../../public/Home/images/aside-15.gif"
+    },
+    {
+      "id": "16",
+      "url": "../../../public/Home/images/aside-16.jpg"
+    },
+    {
+      "id": "17",
+      "url": "../../../public/Home/images/aside-17.png"
+    },
+    {
+      "id": "18",
+      "url": "../../../public/Home/images/aside-18.jpg"
+    },
+    {
+      "id": "19",
+      "url": "../../../public/Home/images/aside-19.png"
+    }
+  ],
+  "section3": [
+    {
+      "heading": "Dependable",
+      "title": "You can rely on us at all times.",
+      "des": "Be it during large calamities like Odisha cyclone or minor accidents like a broken tail-light, we have always stood by our customers in time of need. We have repeatedly introduced industry-leading practices for nearly two decades. So, in times of trouble, be assured, we’ve got your back. We stand by our motto: “Nibhaye Vaade”.",
+      "img": "../../../public/Home/images/section-3-1.png"
+    },
+    {
+      "heading": "Approachable",
+      "title": "You've got a friend in us.",
+      "des": "Value of insurance is realised when you make a claim. In your hour of need, be it a major surgery or a broken car, you need more than just claim support. Our team comprises highly trained professionals and functional experts to guide you through the right course of action during emergencies. So, don’t hesitate. Any questions you have or any help you need - just reach out to us.",
+      "img": "../../../public/Home/images/section-3-2.png",
+      "date": "(As on May 31, 2025)"
+    },
+    {
+      "heading": "Transparent",
+      "title": "We give you the power of clarity.",
+      "des": "Insurance products are designed and priced through complicated mathematical models. But we strive to explain the extent of coverage to you in a simple manner. From policy issuance to claims, you can count on us for keeping it simple. We have always gone the extra mile to make things clear, right from pre-sales to claims support.",
+      "img": "../../../public/Home/images/section-3-3.png"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Car",
+      "icon": "../../../public/Home/images/car-icon.svg",
+      "features": [
+        "Doorstep cashless repair & claims process",
+        "Kms-based plans for low mileage drivers",
+        "AI-backed instant claims process"
+      ],
+      "superscript": ["H", "", ""],
+      "link": "/car"
+    },
+    {
+      "id": 2,
+      "title": "Bike",
+      "icon": "../../../public/Home/images/scotter-icon.svg",
+      "features": [
+        "Cashless garage network",
+        "Option of long-term policies",
+        "Service guarantee on repairs"
+      ],
+      "superscript": ["", "", "E"],
+      "link": "/bike"
+    },
+    {
+      "id": 3,
+      "title": "Health",
+      "icon": "../../../public/Home/images/health-icon.svg",
+      "features": [
+        "Personalised policies for all budgets & ages",
+        "Cashless treatment at any hospital",
+        "Coverage for mild sickness to hospitalisation"
+      ],
+      "superscript": ["", "Q", ""],
+      "link": "/health"
+    },
+    {
+      "id": 4,
+      "title": "Travel",
+      "icon": "../../../public/Home/images/travel-icon.svg",
+      "features": [
+        "Cashless hospitalisation worldwide",
+        "Coverage for missed flights, baggage & passport loss",
+        "Instant online policy"
+      ],
+      "superscript": ["", "", ""],
+      "link": "/travel"
+    }
+  ],
+  "PMFBY": [
+    {
+      "id":"1",
+      "logo": "../../../public/Home/images/pmfby-logo.png",
+      "title": "PMFBY",
+      "des": "The PMFBY was launched in 2016 and replaces all the prevailing yield insurance schemes in India. The scheme has extended coverage under localized risks, post-harvest losses etc. and aims at adoption of technology for the purpose of yield estimation. Through increased farmer awareness and low farmer premium rates the scheme aims at increasing the crop insurance penetration in India."
+    }
+  ],
+  "FraudAwareness":[
+    {
+      "id": "1",
+      "title": "Fraud awareness",
+      "logo": "../../../public/Home/images/fraud-logo.png",
+      "des": "All claims are processed as per the respective policy terms &amp; conditions. If anyonedemands money for processing claim please do not pay, report it to us at:",
+      "mail": "fraudinfo@icicilombard.com"
+    },
+    {
+      "id": "2",
+      "title": "Fraud awareness",
+      "logo": "../../../public/Home/images/fraud-logo.png",
+      "des": "Motor Policy issued can be verified by scanning the QR Code available on the policy document. In case of discrepancy immediately email to",
+      "mail": "fraudinfo@icicilombard.com"
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Krishna Patel",
+      "profileIcon": "../../../public/Home/images/profile-icon-male.png",
+      "rating": 5,
+      "comment": "Bought the ICICI Lombard travel insurance for my urgent trip to Europe this summer. I got my policy certificate within minutes. Simple, easy to follow, digital purchase process. Good work!"
+    },
+    {
+      "id": 2,
+      "name": "Sagar Singh",
+      "profileIcon": "../../../public/Home/images/profile-icon-male.png",
+      "rating": 4,
+      "comment": "The cashless hospitalisation feature is really useful. My wife's emergency surgery was completed with absolutely no delays. The network hospital attended to her immediately and admitted her on priority. Thanks guys!"
+    },
+    {
+      "id": 3,
+      "name": "Aarti Navelkar",
+      "profileIcon": "../../../public/Home/images/profile-icon-female.png",
+      "rating": 5,
+      "comment": "Loved the easy, digital claims process, had to just upload images of my damaged car to register my claim. The claims advisor was very friendly and helped me dedicatedly in settling the claim."
+    }
+  ],
+  "awards": [
+    {
+      "id": 1,
+      "title": "Voted General Insurance Superbrand by Consumers",
+      "image": "../../../public/Home/images/superbrand-img.jpg",
+      "description": "Being awarded as a Superbrand is a testimony of our customer-centric approach in providing insurance solutions, while delivering on our promise."
+    },
+    {
+      "id": 2,
+      "title": "Triple Accolades at FICCI Awards",
+      "image": "../../../public/Home/images/ficci-awards-img.jpg",
+      "description": "Our AI-enabled vehicle inception facility won us the FICCI Awards in the 'Most Innovative Insurance Offerings' category."
+    }
+  ],
+
+  "homeinsurance":[
+    {
+      
+    }
+  ]
+  
+
+}

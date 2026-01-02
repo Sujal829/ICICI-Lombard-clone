@@ -1,0 +1,19 @@
+import React from "react";
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
+
+function ProtectedRoute({ children }) {
+  const user = useSelector((state) => state.auth.user);
+
+  if (!user) {
+    return <Navigate to="/" replace />;
+  }
+
+  if (user.Mobno !== "0123456789") {
+    return <Navigate to="/" replace />;
+  }
+
+  return children;
+}
+
+export default ProtectedRoute;
