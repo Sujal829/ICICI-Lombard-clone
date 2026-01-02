@@ -12,7 +12,7 @@ function App() {
   return (
     <>
     {/* <Snowfall /> */}
-    <ToastContainer position="top-center"/>
+    <ToastContainer />
     <Header />
     <PageRoutes />
     <Footer />

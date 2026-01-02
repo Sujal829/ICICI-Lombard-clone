@@ -48,8 +48,10 @@ const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccfl
         setcreateaccflag(true);
       }
     } catch (err) {
-      console.log(err);
-      dispatch(loginFailure(error));
+      toast.error("DB Not connected",{position: "top-center"});
+      // alert("DB Not Connected");
+      setloginformflag(false)
+      dispatch(loginFailure(err));
     }
   };
   const handlecreateaccount = () => {
@@ -64,6 +66,10 @@ const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccfl
       const mobileno = mobno.current.value;
       const emailid = email.current.value
       const data = await UseApi();
+      if(!data){
+        toast.error("DB not connected",{position: "top-center"});
+        setcreateaccflag(false);
+      }
       const mobnoexist = data.filter((i) => i.Mobno == mobileno);
       if (mobnoexist.length > 0) {
         toast.error("Mobile No  is Already Exist Please Login", {position: "top-center"});
@@ -135,7 +141,7 @@ const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccfl
                       onClick={handelLogin}
                       className="il-btn-primary il-btn-orange js-send-otp"
                     >
-                      Send OTP
+                     {loading? "Loadnig..." : "Send OTP"}
                     </a>
                   </div>
 
@@ -212,7 +218,7 @@ const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccfl
                       onClick={createaccount}
                       className="il-btn-primary il-btn-orange js-send-otp"
                     >
-                      Send OTP
+                      {loading ?"Loading..." :"Send OTP"}
                     </a>
                   </div>
                 </div>

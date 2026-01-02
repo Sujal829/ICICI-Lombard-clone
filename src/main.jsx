@@ -5,6 +5,7 @@ import { BrowserRouter, Outlet } from "react-router-dom";
 import Store from "./Redux/Store";
 import App from "./App";
 import Snowfall from "react-snowfall";
+import { ToastContainer } from "react-toastify";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
