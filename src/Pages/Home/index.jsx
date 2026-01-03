@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import data from "./home.json";
 import Header from "../../components/Header";
 import { Tooltip } from "react-tooltip";
@@ -9,7 +9,15 @@ import { setuser } from "../../Redux/UserSlice";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import MemberDetails from "../../components/Form";
+import "animate.css/animate.compat.css"
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+
 function Home() {
+  useEffect(() => {
+    AOS.init({ once: false, duration: 1000 });
+  }, []);
   const [inc, setinc] = useState(1);
   // const [adultscount, setadultscount] = useState(0);
   const [formflag, setformflag] = useState(false);
@@ -37,41 +45,34 @@ function Home() {
     };
 
     try {
-      // 1️⃣ Get latest user
       const userRes = await axios.get(`http://localhost:5000/users/${user.id}`);
 
       const userData = userRes.data;
 
-      // 2️⃣ Append new insurance
       const updatedInsurance = [...(userData.insurance || []), insuranceObj];
 
-      // 3️⃣ Patch insurance
       const patchRes = await axios.patch(
         `http://localhost:5000/users/${user.id}`,
         { insurance: updatedInsurance }
       );
 
       if (patchRes.status === 200) {
-        // 4️⃣ Fetch updated user again
         const updatedUserRes = await axios.get(
           `http://localhost:5000/users/${user.id}`
         );
 
         const updatedUser = updatedUserRes.data;
 
-        // 5️⃣ Update local storage / state
         localstate.setlocaltoken(updatedUser);
         dispatch(setuser(updatedUser));
         toast.success("Insurance added successfully", {
           position: "top-center",
         });
-        // alert("Insurance added successfully");
         inpcarno.current.value = "";
       }
     } catch (error) {
       console.error(error);
       toast.error("Something went wrong", { position: "top-center" });
-      // alert("Something went wrong");
     }
   };
 
@@ -660,6 +661,7 @@ a travel plan every time you plan a trip"
           </div>
         </div>
 
+          
         <div className="section-2">
           <div className="part1">
             <input type="checkbox" /> I agree to the terms & conditions
@@ -701,13 +703,13 @@ a travel plan every time you plan a trip"
             </ul>
           </div>
         </div>
-
-        <div className="section-3">
+              
+        <div className="section-3"  data-aos="fade-up">
           <h3>Why choose ICICI Lombard?</h3>
 
           {/* Block 1 */}
-          <div className="block1">
-            <div>
+          <div className="block1" >
+            <div data-aos="fade-right">
               <h1>{data.section3[0].heading}</h1>
               <p>
                 <b>{data.section3[0].title}</b>
@@ -715,17 +717,18 @@ a travel plan every time you plan a trip"
               <p>{data.section3[0].des}</p>
             </div>
 
-            <img src={data.section3[0].img} alt="section-3-1" />
+            <img data-aos="fade-left" src={data.section3[0].img} alt="section-3-1" />
           </div>
 
           {/* Block 2 */}
-          <div className="block1">
+          <div className="block1" data-aos="fade-up">
             <img
+              data-aos="fade-right"
               src="../../../public/Home/images/section-3-2.png"
               alt="section-3-2"
             />
 
-            <div>
+            <div data-aos="fade-left">
               <h1>{data.section3[1].heading}</h1>
               <p>
                 <b>{data.section3[1].title}</b>
@@ -743,22 +746,22 @@ a travel plan every time you plan a trip"
           </div>
 
           {/* Block 3 */}
-          <div className="block1">
-            <div>
+          <div className="block1" >
+            <div data-aos="fade-right">
               <h1>{data.section3[2].heading}</h1>
               <p>
                 <b>{data.section3[2].title}.</b>
               </p>
               <p>{data.section3[2].des}</p>
             </div>
-            <img src={data.section3[2].img} alt="section-3-3" />
+            <img  data-aos="fade-left" src={data.section3[2].img} alt="section-3-3" />
           </div>
         </div>
         {/* Section 4 */}
-        <div className="section-4">
+        <div className="card section-4" data-aos="fade-up">
           <h2>Our products</h2>
 
-          <div className="container">
+          <div className="container" data-aos="fade-up">
             {/* Car */}
             {data.products.map((item) => (
               <div className="block" key={item.id}>
@@ -783,7 +786,7 @@ a travel plan every time you plan a trip"
         </div>
 
         {/* Section 5 */}
-        <div className="section-5">
+        <div className="section-5"  data-aos="fade-up">
           <div className="container position-relative">
             <div className="left-block">
               <h2>Experience insurance on the go with IL TakeCare app</h2>
@@ -857,7 +860,7 @@ a travel plan every time you plan a trip"
           </div>
         </div>
 
-        <div className="section-6">
+        <div className="section-6"  data-aos="fade-up">
           <div className="section-6-title">
             <h2>#LearnCPRSaveALife</h2>
             <p>
@@ -880,7 +883,7 @@ a travel plan every time you plan a trip"
           </div>
         </div>
 
-        <div className="row section-7">
+        <div className="row section-7"  data-aos="fade-up">
           <div className="col-sm-12 col-md-6 d-flex align-items-start">
             <div>
               <div className="pmfby-logo mb-3">
@@ -944,7 +947,7 @@ a travel plan every time you plan a trip"
           </div>
         </div>
 
-        <div className="row section-8">
+        <div className="row section-8" data-aos="fade-uo">
           {/* LEFT SIDE – REVIEWS */}
           <div className="col-sm-12 col-md-6">
             <h2>A happy you, makes a happy us.</h2>
