@@ -18,11 +18,13 @@ const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccfl
   const lname = useRef();
   const email = useRef();
   
-   const nevigate = useNavigate()
+  const nevigate = useNavigate()
+  
   const handelLogin = async () => {
     try {
       dispatch(loginStart());
       const no = mobno.current.value;
+      if(no){
       const data = await UseApi();
       // console.log(data);
       const exist = data.some((i) => {
@@ -47,6 +49,9 @@ const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccfl
         // /
         setcreateaccflag(true);
       }
+    }
+    else{toast.warn("Enter Mobile No !!!",{position: "top-center"}); 
+      dispatch(loginFailure())}
     } catch (err) {
       toast.error("DB Not connected",{position: "top-center"});
       // alert("DB Not Connected");
@@ -78,7 +83,7 @@ const PopupLogin = ({loginfromflag,setloginformflag,createaccflag,setcreateaccfl
         setloginformflag(true);
       } else {
         if (firstname && lastname && mobileno) {
-          console.log(firstname, lastname, mobileno);
+          // console.log(firstname, lastname, mobileno);
           let obj = {
             id: Date.now().toString(),
             FirstName: firstname,
