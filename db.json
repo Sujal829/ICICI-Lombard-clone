@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "FirstName": "Sujal",
+      "LastName": "Jathar",
+      "Mobno": "0123456789"
+    },
+    {
+      "id": "1765797402665",
+      "FirstName": "Manish",
+      "LastName": "Jathar",
+      "Mobno": "9999999999",
+      "email": "manish@gmail.com",
+      "insurance": [
+        {
+          "inctype": "Car",
+          "carno": "MH45BE0829"
+        },
+        {
+          "inctype": "Car",
+          "carno": "MH12AA1234"
+        },
+        {
+          "inctype": "Bike",
+          "carno": "MH45AQ3421"
+        }
+      ]
+    },
+    {
+      "id": "1765954510411",
+      "FirstName": "Rohan",
+      "LastName": "Patil",
+      "Mobno": "1234567890",
+      "email": "Rohan@gmail.com",
+      "insurance": [
+        {
+          "inctype": "Car",
+          "carno": "MH45BE0829"
+        },
+        {
+          "inctype": "Car",
+          "carno": "MH23AA1123"
+        }
+      ]
+    },
+    {
+      "id": "1766072050446",
+      "FirstName": "sujal",
+      "LastName": "Jathar ",
+      "Mobno": "1212121212",
+      "email": "sujal@gmail.com",
+      "insurance": [
+        {
+          "inctype": "Car",
+          "carno": "MH45BE0829"
+        }
+      ]
+    },
+    {
+      "id": "1766114296251",
+      "FirstName": "Rohan",
+      "LastName": "Patil",
+      "Mobno": "9898989898",
+      "email": "Rohan@gmail.com",
+      "insurance": [
+        {
+          "inctype": "Car",
+          "carno": "MH23AA1123"
+        }
+      ]
+    },
+    {
+      "id": "1766119068537",
+      "FirstName": "Rohan",
+      "LastName": "Patil",
+      "Mobno": "9090909090",
+      "email": "Rohan@gmail.com",
+      "insurance": []
+    }
+  ]
+}
